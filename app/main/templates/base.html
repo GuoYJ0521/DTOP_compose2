@@ -51,31 +51,25 @@
                         <p class="fs-5 fw-bold my-0">Sensorlist</p>
                         <ul class="list-group w-100 mx-auto ">
                             <li class="list-unstyled p-0">
-                                <a id="ACM-btn" class="rounded hover-b d-block ps-1 pe-3 py-1 text-dark text-decoration-none sensor-btn d-flex align-items-center" data-sensor-type-id="1" {% block sensor1 %}{% endblock %}>
+                                <a id="ACM-btn" class="rounded hover-b d-block ps-1 pe-3 py-1 text-dark text-decoration-none sensor-btn d-flex align-items-center sensor-btn" data-sensor-type-id="1" {% block sensor1 %}{% endblock %}>
                                     <img src="{{ url_for('static', filename='icons/accelerometer.jpg') }}" class="float-start me-2 bg-white" height="30"/>
-                                    加速規
+                                    <span>加速規</span>
                                 </a>
                             </li>
                             <li class="list-unstyled p-0">
-                                <a id="CC-btn" class="rounded hover-b d-block ps-1 pe-3 py-1 text-dark text-decoration-none sensor-btn d-flex align-items-center"  data-sensor-type-id="2" {% block sensor2 %}{% endblock %}>
+                                <a id="CC-btn" class="rounded hover-b d-block ps-1 pe-3 py-1 text-dark text-decoration-none sensor-btn d-flex align-items-center sensor-btn"  data-sensor-type-id="2" {% block sensor2 %}{% endblock %}>
                                     <img src="{{ url_for('static', filename='icons/current_transformer.jpg') }}" class="float-start me-2 bg-white" height="30"/>
-                                    比流計
+                                    <span>比流計</span>
                                     
                                 </a>
                             </li>
                             <li class="list-unstyled p-0">
-                                <a id="MIC-btn" class="rounded hover-b d-block ps-1 pe-3 py-1 text-dark text-decoration-none sensor-btn d-flex align-items-center"  data-sensor-type-id="3" {% block sensor3 %}{% endblock %}>
+                                <a id="MIC-btn" class="rounded hover-b d-block ps-1 pe-3 py-1 text-dark text-decoration-none sensor-btn d-flex align-items-center sensor-btn"  data-sensor-type-id="3" {% block sensor3 %}{% endblock %}>
                                     <img src="{{ url_for('static', filename='icons/microphone.jpg') }}" class="float-start me-2 bg-white" height="30"/>
-                                    麥克風
+                                    <span>麥克風</span>
                                     {% block mic %}{% endblock %}
                                 </a>
                             </li>
-                            <!-- <li class="list-unstyled p-0">
-                                <a class="rounded hover-b d-block ps-1 pe-3 py-1 text-dark text-decoration-none sensor-btn d-flex align-items-center">
-                                    <img src="{{ url_for('static', filename='icons/vacuum.jpg') }}" class="me-2 bg-white" height="30"/>
-                                    真空計
-                                </a>
-                            </li> -->
                         </ul>
     
                         <br>
@@ -84,28 +78,28 @@
                             <li class="list-unstyled p-0">
                                 <a class="rounded hover-b d-block ps-1 pe-3 py-1 text-dark text-decoration-none d-flex align-items-center simulation-btn" href="/cad/{{machine}}/{{machine_id}}">
                                     <img src="{{ url_for('static', filename='icons/cad.jpg') }}" class="float-start me-2 bg-white" height="30"/>
-                                    CAD
+                                    <span>CAD</span>
                                 </a>
                             </li>
                             <li class="list-unstyled p-0">                           
                                 <a class="rounded hover-b d-block ps-1 pe-3 py-1 text-dark text-decoration-none d-flex align-items-center simulation-btn" href="/fem/{{machine}}/{{machine_id}}">
                                     <img src="{{ url_for('static', filename='icons/fea.jpg') }}" class="float-start me-2 bg-white" height="30"/>
-                                    FEA
+                                    <span>FEA</span>
                                 </a>
                             </li>
                             <li class="list-unstyled p-0">
                                 <a class="rounded hover-b d-block ps-1 pe-3 py-1 text-dark text-decoration-none d-flex align-items-center simulation-btn" href="/ai/{{machine}}/{{machine_id}}">
                                     <img src="{{ url_for('static', filename='icons/ai.jpg') }}" class="float-start me-2 bg-white" height="30"/>
-                                    AI
+                                    <span>AI</span>
                                 </a>
                             </li>
                         </ul>
 
                         <br>
                         <div>
-                            <a class="rounded hover-b d-block py-1 text-dark text-decoration-none fw-bold fs-5 simulation-btn" href="/logout">
+                            <a class="rounded hover-b d-block py-1 text-dark text-decoration-none fw-bold simulation-btn" href="/logout">
                                 <img src="{{ url_for('static', filename='icons/logout.jpg') }}" class="ms-1 float-start me-2 bg-white" height="30"/>
-                                Log out
+                                <span>Log out</span>
                             </a>   
                         </div>
                     </div> 
@@ -124,7 +118,7 @@
             <div id="container-right">
                 <div class="d-block sticky-at-current" >
                     <button type="button" id="collapse-right" class="collapse-btn-right">
-                        <i class="bi bi-arrow-bar-right"></i>
+                        <i class="bi bi-arrow-bar-left"></i>
                     </button>
                     <div class="ps-5 pe-3 fs-5">
                         {% block condition %}

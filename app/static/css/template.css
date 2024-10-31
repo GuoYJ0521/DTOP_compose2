@@ -90,10 +90,12 @@ legend {
 
 .sensor-btn {
     cursor: pointer;
+    z-index: 1000;
 }
 
 .hide {
     display: none;
+    z-index: 1000;
 }
 
 /* container */
@@ -129,7 +131,7 @@ legend {
 }
 
 /* collapse btn */
-.collapse-btn-left {
+#collapse-left {
     position: absolute;
     top: 0%;
     left: var(--icon-left);
@@ -137,12 +139,16 @@ legend {
     background-color: transparent;
 }
 
-.collapse-btn-right {
+#collapse-right {
     position: absolute;
     top: 0%;
-    right: 250px;
+    right: var(--icon-right);
     border-color: transparent;
     background-color: transparent;
+}
+
+#collapse-right {
+    display: none;
 }
 
 /* fem result */
@@ -178,15 +184,53 @@ legend {
 @media (max-width:900px) {
     #container-left{
         margin-left: var(--dege-width-shrink-left);
+        /* display: none; */
         /* margin-left: 210px; */
     }
     #container-right{
         margin-right: var(--dege-width-shrink-right);
     }
     #container-left.active {
-        margin-left: 0px;
+        display: block;
     }
     #container-right.active {
         margin-right: 0px;
+    }
+    #collapse-left {
+        display: none;
+    }
+    /* btn位子 */
+    .sensor-btn img{
+        position: relative;
+        left: var(--icon-position-left);
+    }
+    .sensor-btn span{
+        position: relative;
+        left: 70px;
+    }
+    .simulation-btn img {
+        position: relative;
+        left: var(--icon-position-left);
+    }
+    .simulation-btn span {
+        position: relative;
+        left: 70px;
+    }
+    #collapse-right {
+        display: block;
+    }
+
+    /* 滑動效果 */
+    .sensor-btn {
+        transition: transform 0.3s ease;
+    } 
+    .sensor-btn:hover {
+        transform: translateX(80px);
+    }
+    .simulation-btn {
+        transition: transform 0.3s ease;
+    } 
+    .simulation-btn:hover {
+        transform: translateX(80px);
     }
 }
