@@ -33,7 +33,7 @@ def create_app():
     danger = {}
 
     # 配置紀錄日誌
-    handler1 = logging.FileHandler('logs/app_info.log', encoding='utf-8')  # INFO級別
+    handler1 = logging.FileHandler('web_log/app_info.log', encoding='utf-8')  # INFO級別
     handler1.setLevel(logging.INFO)
     formatter1 = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
     handler1.setFormatter(formatter1)

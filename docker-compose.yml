@@ -1,6 +1,6 @@
 services:
   web:
-    build: ./  # Ensure there's a Dockerfile in this path
+    build: ./  # Dockerfile path
     container_name: flask_app
     command: flask run --host=0.0.0.0
     volumes:
@@ -21,7 +21,7 @@ services:
       - MYSQL_DATABASE=data_dt
       - MYSQL_USER=web
       - MYSQL_PASSWORD=web
-      - MYSQL_ROOT_PASSWORD=root_password  # Set a root password
+      - MYSQL_ROOT_PASSWORD=root #root password
     volumes:
       -  "./db:/docker-entrypoint-initdb.d"
     ports:
@@ -63,4 +63,4 @@ volumes:
 
 networks:
   mqtt5-network:
-    external: true
+    driver: bridge
